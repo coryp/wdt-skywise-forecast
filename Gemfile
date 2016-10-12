@@ -10,5 +10,7 @@ group :development do
   gem 'guard-minitest'
   gem 'webmock'
   gem 'simplecov', :require => false, :group => :test
+  gem 'coveralls', require: false
+
   #gem 'activesupport'
 end
