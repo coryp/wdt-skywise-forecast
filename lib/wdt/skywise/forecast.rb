@@ -28,10 +28,10 @@ module Wdt
           "https://skywisefeeds.wdtinc.com/feeds/api/mega.php"
         end
 
-        def search(options)
+        def weather_for(options)
           # validate parameter combinations
           if options.empty?
-            return Wdt::Skywise::Forecast::Response.new({error: "No search parameters specified", success: false} )
+            return Wdt::Skywise::Forecast::Response.new({error: "No parameters specified", success: false} )
           end
 
           if options.has_key?(:CITY) && ( !options.has_key?(:STATE) && !options.has_key?(:COUNTRY))
@@ -51,7 +51,7 @@ module Wdt
           options[:UNITS] = Wdt::Skywise::Forecast::Client.units || "us"
 
           # make the API call
-          response = self.class.get("/feeds/api/mega.php", query: options, headers: auth)
+          response = self.class.get("/feeds/api/mega.php", query: options.map{|k,v| {k.upcase => v}}, headers: auth)
 
           if response.code == 200
             response_body = JSON.parse(response.body.to_s, object_class: OpenStruct)
