@@ -9,5 +9,6 @@ group :development do
   gem 'guard-test'
   gem 'guard-minitest'
   gem 'webmock'
+  gem 'simplecov', :require => false, :group => :test
   #gem 'activesupport'
 end
