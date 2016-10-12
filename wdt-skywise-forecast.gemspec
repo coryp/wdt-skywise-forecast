@@ -1,22 +1,22 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'wdt/skywise/insight/version'
+require 'wdt/skywise/forecast/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "wdt-skywise-insight"
-  spec.version       = Wdt::Skywise::Insight::VERSION
+  spec.name          = "wdt-skywise-forecast"
+  spec.version       = Wdt::Skywise::Forecast::VERSION
   spec.authors       = ["Cory Patterson"]
   spec.email         = ["cory@knockdownoutdoors.com"]
 
-  spec.summary       = %q{Wrapper for the WDT Skywise Insight API}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{Wrapper for the WDT Skywise Forecase API}
+  spec.homepage      = "https://github.com/coryp/wdt-skywise-forecast"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com'"
+    spec.metadata['allowed_push_host'] = "http://rubygems.org"
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
       "public gem pushes."
@@ -32,4 +32,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.13"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "minitest", "~> 5.0"
+  #spec.add_dependency 'activesupport'
+  spec.add_dependency "httparty", "~> 0.14.0"
 end
