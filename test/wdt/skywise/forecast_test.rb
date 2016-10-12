@@ -90,7 +90,7 @@ class Wdt::Skywise::ForecastTest < Minitest::Test
     client = Wdt::Skywise::Forecast::Client.new
     response = client.search(CITY: '32128')
     assert_equal false, response.success
-    assert_equal "STATE or COUNTRY must be provided with CITY", response.error
+    assert_equal "STATE or COUNTRY must be provided with CIT", response.error
     assert_nil response.response
   end
 
