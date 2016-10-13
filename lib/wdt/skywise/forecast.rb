@@ -47,14 +47,13 @@ module Wdt
           end
 
           # set format and units defaults
-          options[:FORMAT] = Wdt::Skywise::Forecast::Client.format || "json"
+          options[:FORMAT] = "json"
           options[:UNITS] = Wdt::Skywise::Forecast::Client.units || "us"
+          response = self.class.get("/feeds/api/mega.php", query: options, headers: auth)
 
           # make the API call
-          response = self.class.get("/feeds/api/mega.php", query: options.map{|k,v| {k.upcase => v}}, headers: auth)
-
           if response.code == 200
-            response_body = JSON.parse(response.body.to_s, object_class: OpenStruct)
+            response_body = JSON.parse(response.body, object_class: OpenStruct)
             return Wdt::Skywise::Forecast::Response.new({response: response_body, success: true} )
           elsif response.code == 403
             return Wdt::Skywise::Forecast::Response.new({error: "Not Authorized", success: false} )

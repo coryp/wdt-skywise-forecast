@@ -35,4 +35,5 @@ Gem::Specification.new do |spec|
   #spec.add_development_dependency 'simplecov', require: false, group: :test
   #spec.add_dependency 'activesupport'
   spec.add_dependency "httparty", "~> 0.14.0"
+  spec.add_dependency "recursive-open-struct"
 end
