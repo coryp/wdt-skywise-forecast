@@ -40,8 +40,8 @@ Get weather data:
     
     weather_data = wdt_client.weather_for(ZIP: '32128')
     
-    weather_data.success            # returns true
-    weather_data.error              # returns nil
+    weather_data.success            # => true
+    weather_data.error              # => nil
     
     weather_data.response.present?  # => true
 
