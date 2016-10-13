@@ -1,4 +1,4 @@
-# WDT Skywise API
+# WDT SkyWise Current & Forecast API
 [![Code Climate](https://codeclimate.com/github/coryp/wdt-skywise-forecast/badges/gpa.svg)](https://codeclimate.com/github/coryp/wdt-skywise-forecast)
 [![Gem Version](https://badge.fury.io/rb/wdt-skywise-forecast.svg)](https://badge.fury.io/rb/wdt-skywise-forecast)
 [![Build Status](https://travis-ci.org/coryp/wdt-skywise-forecast.svg?branch=master)](https://travis-ci.org/coryp/wdt-skywise-forecast) 
