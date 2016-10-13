@@ -9,14 +9,14 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Cory Patterson"]
   spec.email         = ["cory@knockdownoutdoors.com"]
 
-  spec.summary       = %q{Wrapper for the WDT Skywise Forecase API}
+  spec.summary       = %q{Wrapper for the WDT SkyWise Forecast API}
   spec.homepage      = "https://github.com/coryp/wdt-skywise-forecast"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "http://rubygems.org"
+    spec.metadata['allowed_push_host'] = "https://rubygems.org"
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
       "public gem pushes."
@@ -32,7 +32,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.13"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "minitest", "~> 5.0"
-  #spec.add_development_dependency 'simplecov', require: false, group: :test
-  #spec.add_dependency 'activesupport'
   spec.add_dependency "httparty", "~> 0.14.0"
 end
