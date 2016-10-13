@@ -10,7 +10,7 @@ Provides an easy-to-use wrapper for the WDT SkyWise Current and Forecast API.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'wdt-skywise-insight'
+gem 'wdt-skywise-forecast'
 ```
 
 And then execute:
@@ -19,7 +19,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install wdt-skywise-insight
+    $ gem install wdt-skywise-forecast
 
 ## Usage
 
