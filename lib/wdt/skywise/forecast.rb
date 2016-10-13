@@ -30,20 +30,9 @@ module Wdt
 
         def weather_for(options)
           # validate parameter combinations
-          if options.empty?
-            return Wdt::Skywise::Forecast::Response.new({error: "No parameters specified", success: false} )
-          end
-
-          if options.has_key?(:CITY) && ( !options.has_key?(:STATE) && !options.has_key?(:COUNTRY))
-            return Wdt::Skywise::Forecast::Response.new({error: "STATE or COUNTRY must be provided with CITY", success: false} )
-          end
-
-          if options.has_key?(:LAT) && !options.has_key?(:LONG)
-            return Wdt::Skywise::Forecast::Response.new({error: "LONG must be provided with LAT", success: false} )
-          end
-
-          if options.has_key?(:LONG) && !options.has_key?(:LAT)
-            return Wdt::Skywise::Forecast::Response.new({error: "LAT must be provided with LONG", success: false} )
+          valid = validate_options(options)
+          if !valid[:success]
+            return Wdt::Skywise::Forecast::Response.new({error: valid[:error], success: valid[:success]} )
           end
 
           # set format and units defaults
@@ -62,6 +51,25 @@ module Wdt
         end
 
         private
+        def validate_options(options)
+          if options.empty?
+            error = "No parameters specified"
+            success = false
+          elsif options.has_key?(:CITY) && ( !options.has_key?(:STATE) && !options.has_key?(:COUNTRY))
+            error = "STATE or COUNTRY must be provided with CITY"
+            success = false
+          elsif options.has_key?(:LAT) && !options.has_key?(:LONG)
+            error = "LONG must be provided with LAT"
+            success = false
+          elsif options.has_key?(:LONG) && !options.has_key?(:LAT)
+            error = "LAT must be provided with LONG"
+            success = false
+          else
+            success = true
+          end
+          {error: error, success: success}
+        end
+
         def auth
           {app_id: Wdt::Skywise::Forecast::Client.app_id, app_key: Wdt::Skywise::Forecast::Client.app_key}
         end
