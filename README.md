@@ -3,7 +3,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/coryp/wdt-skywise-forecast/badge.svg?branch=master)](https://coveralls.io/github/coryp/wdt-skywise-forecast?branch=master)
 
 
-Provides an easy-to-use wrapper for the WDT Skywise API.
+Provides an easy-to-use wrapper for the WDT SkyWise Current and Forecast API.
 
 ## Installation
 
