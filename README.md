@@ -85,3 +85,5 @@ The full structure can be found [here](https://skywise.wdtinc.com/root/mega-docs
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
+
+Developed by [Knockdown Outdoors](http://www.knockdownoutdoors.com "Knockdown Outdoors")
