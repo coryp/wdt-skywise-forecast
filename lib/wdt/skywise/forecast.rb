@@ -52,6 +52,7 @@ module Wdt
 
         private
         def validate_options(options)
+          success = true
           if options.empty?
             error = "No parameters specified"
             success = false
@@ -64,8 +65,6 @@ module Wdt
           elsif options.has_key?(:LONG) && !options.has_key?(:LAT)
             error = "LAT must be provided with LONG"
             success = false
-          else
-            success = true
           end
           {error: error, success: success}
         end
