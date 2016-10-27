@@ -70,7 +70,7 @@ module Wdt
         end
 
         def auth
-          {app_id: Wdt::Skywise::Forecast::Client.app_id, app_key: Wdt::Skywise::Forecast::Client.app_key}
+          {"app_id" =>  Wdt::Skywise::Forecast::Client.app_id, "app_key" => Wdt::Skywise::Forecast::Client.app_key}
         end
       end  
     end
